@@ -17,6 +17,7 @@ namespace JamFactory.View.Group_E {
     /// Interaction logic for Start.xaml
     /// </summary>
     public partial class Start : Window {
+        MainWindow main;
         public Start() {
             InitializeComponent();
         }
@@ -25,11 +26,19 @@ namespace JamFactory.View.Group_E {
         {
             AddActivity activity = new AddActivity();
             activity.Show();
+            this.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void BackToMain_Click(object sender, RoutedEventArgs e)
+        {          
+            main = new MainWindow();
+            main.Show();
+            this.Close();
         }
     }
 }

@@ -19,6 +19,7 @@ namespace JamFactory
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainWindow main;
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +28,9 @@ namespace JamFactory
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             View.Group_E.Start start = new View.Group_E.Start();
+            main = new MainWindow();
             start.Show();
+            this.Close();
         }
     }
 }
