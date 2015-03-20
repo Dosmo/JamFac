@@ -10,11 +10,11 @@ namespace JamFactory.Model {
         public string Password { get; set; }
         public DateTime Hired { get; set; }
 
-        public Employee(int id, string password, DateTime hired, string name) {
-            this.ID = id;
-            this.Password = password;
-            this.Hired = hired;
-            this.Name = name;
+        public Employee(int ID, string Password, DateTime Hired, string Name) {
+            this.ID = ID;
+            this.Password = Password;
+            this.Hired = Hired;
+            this.Name = Name;
         }
     }
 }

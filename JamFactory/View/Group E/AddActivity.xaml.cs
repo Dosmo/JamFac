@@ -33,8 +33,6 @@ namespace JamFactory.View.Group_E
             addMeasurement.SetController(_activityController);
             addMeasurement.Show();
             this.Close();
-            
-
         }
     }
 }

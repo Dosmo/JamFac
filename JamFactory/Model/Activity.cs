@@ -21,7 +21,7 @@ namespace JamFactory.Model
             this.Name = name;
             this.Description = description;
             this.TimeCheck = timeCheck;
-            Measurements = new List<Measurement>();
+            this.Measurements = new List<Measurement>();
         }
     }
 }

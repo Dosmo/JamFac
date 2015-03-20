@@ -10,13 +10,13 @@ namespace JamFactory.Model
     {
         public double Gram { get; set; }
         public string Season { get; set; }
-        public Fruit(string name, double price, int amount, double gram, string season) : base(name, price, amount)
+        public Fruit(string Name, double Price, int Amount, double Gram, string Season) : base(Name, Price, Amount)
         {
-            Name = name;
-            Price = price;
-            Amount = amount;
-            Gram = gram;
-            Season = season;
+            this.Name = Name;
+            this.Price = Price;
+            this.Amount = Amount;
+            this.Gram = Gram;
+            this.Season = Season;
         }
     }
     
