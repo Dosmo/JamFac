@@ -88,9 +88,9 @@ namespace JamFactory.Controller.Database
 
                     command.ExecuteNonQuery();
                 }
-                catch (SqlException)
+                catch (SqlException e)
                 {
-                    /*Handle error*/
+                    throw new Exception("Error in creating a new Measurement" + e.Message);
                 }
 
             }
