@@ -125,9 +125,9 @@ namespace JamFactory.Controller.Database
                     }
                     reader.Close();
                 }
-                catch (SqlException)
+                catch (SqlException e)
                 {
-                    /*Handle error*/
+                    throw new Exception("Error in getting Employee from Person id" + e.Message);
                 }
                 return employees;
             }
@@ -165,9 +165,9 @@ namespace JamFactory.Controller.Database
                     }
                     reader.Close();
                 }
-                catch (SqlException)
+                catch (SqlException e)
                 {
-                    /*Handle error*/
+                    throw new Exception("Error in getting Products from ID" + e.Message);
                 }
                 return products;
             }
