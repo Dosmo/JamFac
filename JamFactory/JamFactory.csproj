@@ -53,11 +53,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\Group E\AddActivity.xaml">
+    <Page Include="View\Group E\AddControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Group E\AddMeasurement.xaml">
+    <Page Include="View\Group E\AddActivity.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -95,11 +95,11 @@
     <Compile Include="Controller\IngredientController.cs" />
     <Compile Include="Controller\ProductController.cs" />
     <Compile Include="Controller\ProductionController.cs" />
+    <Compile Include="View\Group E\AddControl.xaml.cs">
+      <DependentUpon>AddControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Group E\AddActivity.xaml.cs">
       <DependentUpon>AddActivity.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Group E\AddMeasurement.xaml.cs">
-      <DependentUpon>AddMeasurement.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

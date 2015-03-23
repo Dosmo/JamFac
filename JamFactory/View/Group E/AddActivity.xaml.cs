@@ -15,27 +15,43 @@ using System.Windows.Shapes;
 namespace JamFactory.View.Group_E
 {
     /// <summary>
-    /// Interaction logic for AddActivity.xaml
+    /// Interaction logic for AddMeasurement.xaml
     /// </summary>
-    /// yo hoes
-    public partial class AddActivity : Window
-    {
-        Controller.ActivityController _activityController = new Controller.ActivityController();
-        public AddActivity()
+    public partial class AddMeasurement : Window
+    {       
+        Controller.ActivityController _activityController;
+
+        public AddMeasurement()
         {
             InitializeComponent();
         }
-        // Move to Acitvitycontroller 
-        private void AddNewMeasurement_Click(object sender, RoutedEventArgs e)
+        /*
+        public void SetController(Controller.ActivityController c)
         {
-            _activityController.AddControl(new Model.Control(AddName.Text, AddDescription.Text, AddTimeCheck.Text), int.Parse(AddEmployeeID.Text), int.Parse(AddProductID.Text));
-            AddMeasurement addMeasurement = new AddMeasurement(); 
-            //addMeasurement.SetController(_activityController);
-            addMeasurement.Show();
-            this.Close();
+            _activityController = c;
+        }
+         */
+        // Move to Acitvitycontroller
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            _activityController.AddMeasurement(_activityController.Activities.Last());
+        }
+        // Move to Acitvitycontroller
+        private void AddNewActivity_Click(object sender, RoutedEventArgs e)
+        {
+            DateTime Startdate = Convert.ToDateTime(StartDate.SelectedDate);
+            ActivityLine.Items.Add(Name.Text + ", " + Description.Text + ", " + Details.Text + ", " + Startdate + ", " + ExpectedResult.Text + ", " + ActualResult);
+
+            _activityController.AddActivity(Name.Text, Description.Text, Details.Text, Startdate, ExpectedResult.Text, ActualResult.Text);
+
+            /*
+            _activityController.Activities.Last().Measurements.Add(new Model.Activity(Name.Text, ExpectedResult.Text));
+            Name.Text = "";
+            ExpectedResult.Text = "";
+             */
         }
 
-        private void Back_Click(object sender, RoutedEventArgs e) {
+        private void Button_Click(object sender, RoutedEventArgs e) {
             Start start = new Start();
             start.Show();
             this.Close();
