@@ -36,7 +36,7 @@
 
         <Button Name ="AddNewMeasurement" Content="Tilføj måling" HorizontalAlignment="Left" Margin="63,250,0,0" VerticalAlignment="Top" Width="142" Click="AddNewMeasurement_Click"/>
         <TextBox Name="Description" HorizontalAlignment="Left" Height="40" Margin="145,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock IsHitTestVisible="False" HorizontalAlignment="Left" Margin="147,66,0,0" TextWrapping="Wrap" Text="Indtast Description for måling..." VerticalAlignment="Top" Foreground="#555" Width="120" Height="39">
+        <TextBlock IsHitTestVisible="False" HorizontalAlignment="Left" Margin="147,66,0,0" TextWrapping="Wrap" Text="Indtast beskrivelse for måling..." VerticalAlignment="Top" Foreground="#555" Width="120" Height="39">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -49,7 +49,7 @@
             </TextBlock.Style>
         </TextBlock>
         <TextBox Name="Details" HorizontalAlignment="Left" Height="40" Margin="9,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock IsHitTestVisible="False" HorizontalAlignment="Left" Margin="11,113,0,0" TextWrapping="Wrap" Text="Indtast Details for måling..." VerticalAlignment="Top" Foreground="#555" Width="120" Height="39">
+        <TextBlock IsHitTestVisible="False" HorizontalAlignment="Left" Margin="11,113,0,0" TextWrapping="Wrap" Text="Indtast detaljer for måling..." VerticalAlignment="Top" Foreground="#555" Width="120" Height="39">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>

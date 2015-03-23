@@ -38,9 +38,9 @@ namespace JamFactory.View.Group_E
         // Move to Acitvitycontroller
         private void AddNewMeasurement_Click(object sender, RoutedEventArgs e)
         {
-            _activityController.Activities.Last().Measurements.Add(new Model.Measurement(AddName.Text, AddExpectedResult.Text));
-            AddName.Text = "";
-            AddExpectedResult.Text = "";
+            _activityController.Activities.Last().Measurements.Add(new Model.Measurement(Name.Text, ExpectedResult.Text));
+            Name.Text = "";
+            ExpectedResult.Text = "";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
