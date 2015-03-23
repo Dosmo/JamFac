@@ -28,7 +28,7 @@ namespace JamFactory.View.Group_E
         // Move to Acitvitycontroller 
         private void AddNewMeasurement_Click(object sender, RoutedEventArgs e)
         {
-            _activityController.AddControl(new Model.Activity(AddName.Text, AddDescription.Text, AddTimeCheck.Text), int.Parse(AddEmployeeID.Text), int.Parse(AddProductID.Text));
+            _activityController.AddControl(new Model.Control(AddName.Text, AddDescription.Text, AddTimeCheck.Text), int.Parse(AddEmployeeID.Text), int.Parse(AddProductID.Text));
             AddMeasurement addMeasurement = new AddMeasurement(); 
             //addMeasurement.SetController(_activityController);
             addMeasurement.Show();

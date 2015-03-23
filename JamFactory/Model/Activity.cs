@@ -10,18 +10,13 @@ namespace JamFactory.Model
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public string TimeCheck { get; set; }
-        public List<Measurement> Measurements { get; set; }
-        public Model.Product Product { get; set; }
-        public Model.Employee Employee { get; set; }
+        public string ExpectedResult { get; set; }
+        public string ActualResult { get; set; }
 
-        public Activity(string name, string description, string timeCheck)
+        public Activity(string Name, string ExpectedResult)
         {
-            this.Name = name;
-            this.Description = description;
-            this.TimeCheck = timeCheck;
-            this.Measurements = new List<Measurement>();
+            this.Name = Name;
+            this.ExpectedResult = ExpectedResult;
         }
     }
 }

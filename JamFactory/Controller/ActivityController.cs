@@ -9,17 +9,17 @@ namespace JamFactory.Controller
 {
     public class ActivityController
     {
-        public List<Model.Activity> Activities = new List<Model.Activity>();
-        public void AddControl(Model.Activity activity, int personID, int productID)
+        public List<Model.Control> Activities = new List<Model.Control>();
+        public void AddControl(Model.Control activity, int personID, int productID)
         {
             activity.Employee = Database._3DatabaseController.GetEmployeeFromPersonID(personID).FirstOrDefault();
             activity.Product = Database._3DatabaseController.GetProductFromID(productID).FirstOrDefault();
             Database._3DatabaseController.CreateControl(activity);
             Activities.Add(activity);
         }
-        public void AddMeasurement(Model.Activity activity)
+        public void AddMeasurement(Model.Control activity)
         {
-            foreach (Model.Measurement measurement in activity.Measurements)
+            foreach (Model.Activity measurement in activity.Measurements)
             {
                 Database._3DatabaseController.CreateMeasurement(activity, measurement);
             }

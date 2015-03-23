@@ -15,7 +15,7 @@ namespace JamFactory.Controller.Database
 
         public static void GetControl()
         {
-            List<Model.Activity> activitys = new List<Model.Activity>();
+            List<Model.Control> activitys = new List<Model.Control>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
@@ -31,7 +31,7 @@ namespace JamFactory.Controller.Database
                         while (reader.Read())
                         {
                             activitys.Add(
-                                new Model.Activity(
+                                new Model.Control(
                                     reader["Name"].ToString(),
                                     reader["Description"].ToString(),
                                     reader["TimeCheck"].ToString()) { ID = reader.GetInt32(reader.GetOrdinal("ID")) }
@@ -49,7 +49,7 @@ namespace JamFactory.Controller.Database
             }
         }
 
-        public static void CreateControl(Model.Activity control)
+        public static void CreateControl(Model.Control control)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -73,7 +73,7 @@ namespace JamFactory.Controller.Database
             }
         }
 
-        public static void CreateMeasurement(Model.Activity activity, Model.Measurement measurement)
+        public static void CreateMeasurement(Model.Control activity, Model.Activity measurement)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
