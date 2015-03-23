@@ -10,10 +10,10 @@ namespace JamFactory.Model {
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
 
-        public Task(string description, DateTime starttime, DateTime endtime) {
-            this.Description = description;
-            this.StartTime = starttime;
-            this.EndTime = endtime;
+        public Task(string Description, DateTime StartTime, DateTime EndTime) {
+            this.Description = Description;
+            this.StartTime = StartTime;
+            this.EndTime = EndTime;
         }
     }
 }

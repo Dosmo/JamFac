@@ -10,9 +10,9 @@ namespace JamFactory.Model
     {
         public string Type { get; set; }
         public int BerriePercent {get; set;}
-        public Quality(string type, int berriepercent) {
-            this.Type = type;
-            this.BerriePercent = berriepercent;
+        public Quality(string Type, int BerriePercent) {
+            this.Type = Type;
+            this.BerriePercent = BerriePercent;
         }
     }
 }

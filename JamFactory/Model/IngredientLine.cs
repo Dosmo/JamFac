@@ -10,10 +10,10 @@ namespace JamFactory.Model {
         public Recipe Recipe { get; set; }
         public Ingredient Ingredient { get; set; }
 
-        public IngredientLine(int amount, Recipe recipe, Ingredient ingredient) {
-            Amount = amount;
-            Recipe = recipe;
-            Ingredient = ingredient;
+        public IngredientLine(int Amount, Recipe Recipe, Ingredient Ingredient) {
+            this.Amount = Amount;
+            this.Recipe = Recipe;
+            this.Ingredient = Ingredient;
         }
     }
 }

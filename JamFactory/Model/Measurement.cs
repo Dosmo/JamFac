@@ -13,10 +13,10 @@ namespace JamFactory.Model
         public string ExpectedResult { get; set; }
         public string ActualResult { get; set; }
 
-        public Measurement(string name, string expectedResult)
+        public Measurement(string Name, string ExpectedResult)
         {
-            this.Name = name;
-            this.ExpectedResult = expectedResult;
+            this.Name = Name;
+            this.ExpectedResult = ExpectedResult;
         }
     }
 }

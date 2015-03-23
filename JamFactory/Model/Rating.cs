@@ -10,12 +10,12 @@ namespace JamFactory.Model
     {
         public string TestPerson { get; set; }
         public string Comment { get; set;}
-        public int xRating { get; set; }
-        public Rating(string testperson, string comment, int rating) {
-            this.TestPerson = testperson;
-            this.Comment = comment;
-            this.xRating = rating;
+        /* Da klassen hedder rating kan variablen ikke hedde det. */
+        public int aRating { get; set; }
+        public Rating(string TestPerson, string Comment, int Rating) {
+            this.TestPerson = TestPerson;
+            this.Comment = Comment;
+            this.aRating = Rating;
         }
-
     }
 }

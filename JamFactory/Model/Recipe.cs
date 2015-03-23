@@ -11,11 +11,11 @@ namespace JamFactory.Model {
         public string Correspondence { get; set; }
         public List<Product> Products { get; set; }
 
-        public Recipe(string name, string documentation, string correspondence) {
-            Name = name;
-            Documentation = documentation;
-            Correspondence = correspondence;
-            Products = new List<Product>();
+        public Recipe(string Name, string Documentation, string Correspondence) {
+            this.Name= Name;
+            this.Documentation = Documentation;
+            this.Correspondence = Correspondence;
+            this.Products = new List<Product>();
         }
     }
 }

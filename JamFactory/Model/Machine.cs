@@ -11,12 +11,12 @@ namespace JamFactory.Model {
         public double ScrapValue { get; set; }
         public double AuquistionValue { get; set; }
         public DateTime LifeTime { get; set; }
-        public Machine(string name, int capacity, double scrapvalue, double auquistionvalue, DateTime lifetime) {
-            this.Name = name;
-            this.Capacity = capacity;
-            this.ScrapValue = scrapvalue;
-            this.AuquistionValue = auquistionvalue;
-            this.LifeTime = lifetime;
+        public Machine(string Name, int Capacity, double ScrapValue, double AuquistionValue, DateTime LifeTime) {
+            this.Name = Name;
+            this.Capacity = Capacity;
+            this.ScrapValue = ScrapValue;
+            this.AuquistionValue = AuquistionValue;
+            this.LifeTime = LifeTimeW;
         }
     }
 }
