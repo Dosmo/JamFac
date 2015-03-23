@@ -9,7 +9,7 @@ namespace JamFactory.Controller
 {
     public class ActivityController
     {
-        Model.Activity activity;
+        //Model.Activity activity;
         List<Model.Activity> ActivityList = new List<Model.Activity>();
         public List<Model.Control> Activities = new List<Model.Control>();
         public void AddControl(Model.Control activity, int personID, int productID)
@@ -28,7 +28,8 @@ namespace JamFactory.Controller
         }
 
         public void AddActivity(string Title, string Description, string Details, DateTime Time, string ExpectedResult, string ActualResult) {
-            ActivityList.Add(activity = new Model.Activity(Title, Description, Details, Time, ExpectedResult, ActualResult));
+            Model.Activity activity = new Model.Activity(Title, Description, Details, Time, ExpectedResult, ActualResult);
+            ActivityList.Add(activity);
         }
     }
 }

@@ -40,7 +40,7 @@ namespace JamFactory.View.Group_E
         private void AddNewActivity_Click(object sender, RoutedEventArgs e)
         {
             DateTime Startdate = Convert.ToDateTime(StartDate.SelectedDate);
-            ActivityLine.Items.Add(Name.Text + ", " + Description.Text + ", " + Details.Text + ", " + Startdate + ", " + ExpectedResult.Text + ", " + ActualResult);
+            ActivityLine.Items.Add(Name.Text + ", " + Description.Text + ", " + Details.Text + ", " + Startdate + ", " + ExpectedResult.Text + ", " + ActualResult.Text);
 
             _activityController.AddActivity(Name.Text, Description.Text, Details.Text, Startdate, ExpectedResult.Text, ActualResult.Text);
 

@@ -82,7 +82,7 @@ namespace JamFactory.Controller.Database
                     connection.Open();
                     SqlCommand command = new SqlCommand("3_AddMeasurement", connection);
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.Add(new SqlParameter("@Name", measurement.Name));
+                    command.Parameters.Add(new SqlParameter("@Name", measurement.Title));
                     command.Parameters.Add(new SqlParameter("@ExpectedResult", measurement.ExpectedResult));
                     command.Parameters.Add(new SqlParameter("@ActivityID", activity.ID));
 

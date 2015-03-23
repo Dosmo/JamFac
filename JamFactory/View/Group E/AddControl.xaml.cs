@@ -28,8 +28,8 @@ namespace JamFactory.View.Group_E
         // Move to Acitvitycontroller 
         private void AddNewActivity_Click(object sender, RoutedEventArgs e)
         {
-            _activityController.AddControl(new Model.Control(AddName.Text, AddDescription.Text, AddTimeCheck.Text), int.Parse(AddEmployeeID.Text), int.Parse(AddProductID.Text));
-            AddActivity addactivity = new AddActivity(); 
+            //_activityController.AddControl(new Model.Control(AddName.Text, AddDescription.Text, AddTimeCheck.Text), int.Parse(AddEmployeeID.Text), int.Parse(AddProductID.Text));
+            AddMeasurement addactivity = new AddMeasurement(); 
             //addMeasurement.SetController(_activityController);
             addactivity.Show();
             this.Close();
