@@ -13,7 +13,7 @@ namespace JamFactory.Controller.Database
     {
         static string connectionString = "Server=ealdb1.eal.local;" + "Database=EJL20_DB;" + "User Id=ejl20_usr;" + "Password=Baz1nga20";
 
-        public static void GetActivity()
+        public static void GetControl()
         {
             List<Model.Activity> activitys = new List<Model.Activity>();
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -22,7 +22,7 @@ namespace JamFactory.Controller.Database
                 {
 
                     connection.Open();
-                    SqlCommand command = new SqlCommand("3_GetActivity", connection);
+                    SqlCommand command = new SqlCommand("3_GetControl", connection);
                     command.CommandType = CommandType.StoredProcedure;
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -41,33 +41,33 @@ namespace JamFactory.Controller.Database
                     }
                     reader.Close();
                 }
-                catch (SqlException)
+                catch (SqlException e)
                 {
-                    /*Handle error*/
+                    throw new Exception("Error in getting Control" + e.Message);
                 }
 
             }
         }
 
-        public static void CreateActivity(Model.Activity activity)
+        public static void CreateControl(Model.Activity control)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
-                    SqlCommand command = new SqlCommand("3_AddActivity", connection);
+                    SqlCommand command = new SqlCommand("3_AddControll", connection);
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.Add(new SqlParameter("@Name", activity.Name));
-                    command.Parameters.Add(new SqlParameter("@Description", activity.Description));
-                    command.Parameters.Add(new SqlParameter("@TimeCheck", activity.TimeCheck));
-                    command.Parameters.Add(new SqlParameter("@ProductID", activity.Product.ID));
-                    command.Parameters.Add(new SqlParameter("@EmployeeID", activity.Employee.ID));
-                    activity.ID = (Int32)command.ExecuteScalar();
+                    command.Parameters.Add(new SqlParameter("@Name", control.Name));
+                    command.Parameters.Add(new SqlParameter("@Description", control.Description));
+                    command.Parameters.Add(new SqlParameter("@TimeCheck", control.TimeCheck));
+                    command.Parameters.Add(new SqlParameter("@ProductID", control.Product.ID));
+                    command.Parameters.Add(new SqlParameter("@EmployeeID", control.Employee.ID));
+                    control.ID = (Int32)command.ExecuteScalar();
                 }
-                catch (SqlException)
+                catch (SqlException e)
                 {
-                    /*Handle error*/
+                    throw new Exception("Error in adding Control" + e.Message);
                 }
 
             }
