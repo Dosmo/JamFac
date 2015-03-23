@@ -31,7 +31,9 @@ namespace JamFactory.View.Group_E {
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            AddMeasurement addmesurement = new AddMeasurement();
+            addmesurement.Show();
+            this.Close();
         }
 
         private void BackToMain_Click(object sender, RoutedEventArgs e)
