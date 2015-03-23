@@ -42,5 +42,12 @@ namespace JamFactory.View.Group_E
             AddName.Text = "";
             AddExpectedResult.Text = "";
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Start start = new Start();
+            start.Show();
+            this.Close();
+        }
     }
 }
