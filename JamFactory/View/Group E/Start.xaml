@@ -3,8 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Start" Height="300" Width="300">
     <Grid>
-        <Button Name="Activity" Content="Opret Kontrol" HorizontalAlignment="Left" Margin="24,46,0,0" VerticalAlignment="Top" Width="99" Click="Activity_Click"/>
-        <Button Content="Registrer kontrol" HorizontalAlignment="Left" Margin="159,46,0,0" VerticalAlignment="Top" Width="99" Click="Button_Click"/>
-        <Button Name="BackToMain" Content="Gå tilbage" HorizontalAlignment="Left" Margin="104,191,0,0" VerticalAlignment="Top" Width="75" Click="BackToMain_Click"/>
+        <Button Name="BackToMain" Content="Gå tilbage" HorizontalAlignment="Left" Margin="104,191,0,0" VerticalAlignment="Top" Width="100" Click="BackToMain_Click"/>
+        <StackPanel HorizontalAlignment="Center" Height="176" Margin="104,10,88,0" VerticalAlignment="Top" Width="100">
+            <Button x:Name="Activity" Content="Opret Kontrol" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Click="Activity_Click"/>
+            <Button Content="Registrer kontrol" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Click="Button_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
