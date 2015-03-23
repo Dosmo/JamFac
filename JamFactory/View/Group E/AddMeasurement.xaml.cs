@@ -24,10 +24,12 @@ namespace JamFactory.View.Group_E
         {
             InitializeComponent();
         }
+        /*
         public void SetController(Controller.ActivityController c)
         {
             _activityController = c;
         }
+         */
         // Move to Acitvitycontroller
         private void Save_Click(object sender, RoutedEventArgs e)
         {

@@ -30,8 +30,14 @@ namespace JamFactory.View.Group_E
         {
             _activityController.AddActivity(new Model.Activity(AddName.Text, AddDescription.Text, AddTimeCheck.Text), int.Parse(AddEmployeeID.Text), int.Parse(AddProductID.Text));
             AddMeasurement addMeasurement = new AddMeasurement(); 
-            addMeasurement.SetController(_activityController);
+            //addMeasurement.SetController(_activityController);
             addMeasurement.Show();
+            this.Close();
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e) {
+            Start start = new Start();
+            start.Show();
             this.Close();
         }
     }

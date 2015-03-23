@@ -11,7 +11,7 @@ namespace JamFactory.Model {
         public double ScrapValue { get; set; }
         public double AuquistionValue { get; set; }
         public DateTime LifeTime { get; set; }
-        public Machine(string Name, int Capacity, double ScrapValue, double AuquistionValue, DateTime LifeTime) {
+        public Machine(string Name, int Capacity, double ScrapValue, double AuquistionValue, DateTime LifeTimeW) {
             this.Name = Name;
             this.Capacity = Capacity;
             this.ScrapValue = ScrapValue;

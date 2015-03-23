@@ -14,7 +14,7 @@ namespace JamFactory.Controller
         {
             activity.Employee = Database._3DatabaseController.GetEmployeeFromPersonID(personID).FirstOrDefault();
             activity.Product = Database._3DatabaseController.GetProductFromID(productID).FirstOrDefault();
-            Database._3DatabaseController.CreateActivity(activity);
+            Database._3DatabaseController.CreateControl(activity);
             Activities.Add(activity);
         }
         public void AddMeasurement(Model.Activity activity)
