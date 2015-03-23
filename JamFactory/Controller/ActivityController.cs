@@ -10,7 +10,7 @@ namespace JamFactory.Controller
     public class ActivityController
     {
         public List<Model.Activity> Activities = new List<Model.Activity>();
-        public void AddActivity(Model.Activity activity, int personID, int productID)
+        public void AddControl(Model.Activity activity, int personID, int productID)
         {
             activity.Employee = Database._3DatabaseController.GetEmployeeFromPersonID(personID).FirstOrDefault();
             activity.Product = Database._3DatabaseController.GetProductFromID(productID).FirstOrDefault();
