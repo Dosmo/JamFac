@@ -4,7 +4,7 @@
         Title="AddMeasurement" Height="457" Width="316" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,1,0,-1">
         <Label Content="  	Tilføj Måling" HorizontalAlignment="Left" Margin="97,11,0,0" VerticalAlignment="Top" Height="36" Width="174" FontSize="15" FontWeight="Bold"/>
-        <Button Name="Back" Content="Tilbage" HorizontalAlignment="Left" Margin="43,385,0,0" VerticalAlignment="Top" Width="75" Click="Back_Click"/>
+        <Button Name="BacK" Content="Tilbage" HorizontalAlignment="Left" Margin="43,385,0,0" VerticalAlignment="Top" Width="75" Click="Back_Click"/>
         <Button Name="Save" Content="Gem" HorizontalAlignment="Left" Margin="195,385,0,0" VerticalAlignment="Top" Width="75" Click="Save_Click"/>
         <TextBox Name="Name" HorizontalAlignment="Left" Height="40" Margin="10,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBlock IsHitTestVisible="False" HorizontalAlignment="Left" Margin="12,66,0,0" TextWrapping="Wrap" Text="Indtast navn for måling..." VerticalAlignment="Top" Foreground="#555" Width="120" Height="39">
