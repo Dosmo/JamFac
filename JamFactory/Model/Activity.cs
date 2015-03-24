@@ -15,14 +15,14 @@ namespace JamFactory.Model
         public string ExpectedResult { get; set; }
         public string ActualResult { get; set; }
 
-        public Activity(string title, string description, string details, DateTime time, string expectedResult, string actualResult)
+        public Activity(string title, string description, string details, DateTime time, string expectedresult, string actualresult)
         {
             this.Title = title;
             this.Description = description;
             this.Details = details;
             this.Time = time;
-            this.ExpectedResult = ExpectedResult;
-            this.ActualResult = actualResult;
+            this.ExpectedResult = expectedresult;
+            this.ActualResult = actualresult;
         }
     }
 }

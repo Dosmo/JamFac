@@ -56,7 +56,7 @@ namespace JamFactory.Controller.Database
                 try
                 {
                     connection.Open();
-                    SqlCommand command = new SqlCommand("3_AddControll", connection);
+                    SqlCommand command = new SqlCommand("3_AddControl", connection);
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.Parameters.Add(new SqlParameter("@Name", control.Name));
