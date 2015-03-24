@@ -5,8 +5,7 @@
     <Grid>
         <Button Name="BackToMain" Content="Gå tilbage" HorizontalAlignment="Left" Margin="104,191,0,0" VerticalAlignment="Top" Width="100" Click="BackToMain_Click"/>
         <StackPanel HorizontalAlignment="Center" Height="176" Margin="104,10,88,0" VerticalAlignment="Top" Width="100">
-            <Button x:Name="Activity" Content="Opret Kontrol" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Click="Activity_Click"/>
-            <Button Content="Registrer kontrol" HorizontalAlignment="Right" VerticalAlignment="Top" Width="99" Click="Button_Click" Margin="0,0,1,0"/>
+            <Button x:Name="NewControl" Content="Opret Kontrol" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Click="NewControl_Click"/>
         </StackPanel>
     </Grid>
 </Window>

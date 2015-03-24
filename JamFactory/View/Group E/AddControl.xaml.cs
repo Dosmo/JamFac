@@ -21,6 +21,7 @@ namespace JamFactory.View.Group_E
     public partial class AddActivity : Window
     {
         Controller.ActivityController _activityController = new Controller.ActivityController();
+        AddMeasurement addactivity;
         public AddActivity()
         {
             InitializeComponent();
@@ -28,11 +29,19 @@ namespace JamFactory.View.Group_E
         // Move to Acitvitycontroller 
         private void AddNewActivity_Click(object sender, RoutedEventArgs e)
         {
-            //_activityController.AddControl(new Model.Control(AddName.Text, AddDescription.Text, AddTimeCheck.Text), int.Parse(AddEmployeeID.Text), int.Parse(AddProductID.Text));
-            AddMeasurement addactivity = new AddMeasurement(); 
+            //_activityController.AddControl(new Model.Control(AddName.Text, AddDescription.Text, AddTimeCheck.Text, int.Parse(AddEmployeeID.Text), int.Parse(AddProductID.Text));
+            //AddMeasurement addactivity = new AddMeasurement(AddName.Text, AddDescription.Text, AddTimeCheck.Text, int.Parse(AddProductID.Text), int.Parse(AddEmployeeID.Text)); 
             //addMeasurement.SetController(_activityController);
-            addactivity.Show();
-            this.Close();
+
+            try {
+                addactivity = new AddMeasurement(AddName.Text, AddDescription.Text, AddTimeCheck.Text, int.Parse(AddProductID.Text), int.Parse(AddEmployeeID.Text));
+                addactivity.Show();
+                this.Close();
+            }
+            catch (Exception) {
+
+                MessageBox.Show("Alle felterne skal udfyldes");
+            }
         }
 
         private void Back_Click(object sender, RoutedEventArgs e) {

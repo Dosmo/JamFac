@@ -49,7 +49,7 @@ namespace JamFactory.Controller.Database
             }
         }
 
-        public static void CreateControl(Model.Control control)
+        public static void AddControl(Model.Control control)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -58,12 +58,33 @@ namespace JamFactory.Controller.Database
                     connection.Open();
                     SqlCommand command = new SqlCommand("3_AddControll", connection);
                     command.CommandType = CommandType.StoredProcedure;
+
                     command.Parameters.Add(new SqlParameter("@Name", control.Name));
                     command.Parameters.Add(new SqlParameter("@Description", control.Description));
                     command.Parameters.Add(new SqlParameter("@TimeCheck", control.TimeCheck));
                     command.Parameters.Add(new SqlParameter("@ProductID", control.Product.ID));
                     command.Parameters.Add(new SqlParameter("@EmployeeID", control.Employee.ID));
                     control.ID = (Int32)command.ExecuteScalar();
+
+                    SqlCommand command2 = new SqlCommand("3_AddActivityLine", connection);
+                    command2.CommandType = CommandType.StoredProcedure;
+
+                    foreach (Model.Activity a in control.Activitys) {
+                        SqlParameter SqlTitle = new SqlParameter("@AL_Title", a.Title);
+                        command2.Parameters.Add(SqlTitle);
+                        SqlParameter SqlDescription = new SqlParameter("@AL_Description", a.Description);
+                        command2.Parameters.Add(SqlDescription);
+                        SqlParameter SqlDetails = new SqlParameter("@AL_Details", a.Details);
+                        command2.Parameters.Add(SqlDetails);
+                        SqlParameter SqlTime = new SqlParameter("@AL_Time", a.Time);
+                        command2.Parameters.Add(SqlTime);
+                        SqlParameter SqlExceptedResult = new SqlParameter("@AL_ExpectedResult", a.ExpectedResult);
+                        command2.Parameters.Add(SqlExceptedResult);
+                        SqlParameter SqlActualResult = new SqlParameter("@AL_ActualResult", a.ActualResult);
+                        command2.Parameters.Add(SqlActualResult);
+
+                        command2.ExecuteNonQuery();
+                    }
                 }
                 catch (SqlException e)
                 {

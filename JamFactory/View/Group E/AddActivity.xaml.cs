@@ -20,9 +20,19 @@ namespace JamFactory.View.Group_E
     public partial class AddMeasurement : Window
     {       
         Controller.ActivityController _activityController;
+        private string AddName;
+        private string AddDescription;
+        private string AddTimeCheck;
+        private int AddProductID;
+        private int AddEmployeeID;
 
-        public AddMeasurement()
+        public AddMeasurement(string addname, string adddescription, string addtimecheck, int addproductid, int addemployeeid)
         {
+            AddName = addname;
+            AddDescription = adddescription;
+            AddTimeCheck = addtimecheck;
+            AddProductID = addproductid;
+            AddEmployeeID = addemployeeid;
             InitializeComponent();
         }
         /*
@@ -32,11 +42,14 @@ namespace JamFactory.View.Group_E
         }
          */
         // Move to Acitvitycontroller
+        
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            _activityController.AddMeasurement(_activityController.Activities.Last());
+            _activityController.AddControl2(AddName, AddDescription, AddTimeCheck, AddProductID, AddEmployeeID);
+            //_activityController.AddMeasurement(_activityController.Activities.Last());
         }
         // Move to Acitvitycontroller
+       
         private void AddNewActivity_Click(object sender, RoutedEventArgs e)
         {
             _activityController = new Controller.ActivityController();
@@ -44,7 +57,6 @@ namespace JamFactory.View.Group_E
             TimeSpan staDate = new TimeSpan(Convert.ToInt32(staHours.Text), Convert.ToInt32(staMinuts.Text), 0);
             Startdate = Startdate + staDate;
             ActivityLine.Items.Add(Name.Text + ", " + Description.Text + ", " + Details.Text + ", " + Startdate + ", " + ExpectedResult.Text + ", " + ActualResult.Text);
-
             _activityController.AddActivity(Name.Text, Description.Text, Details.Text, Startdate, ExpectedResult.Text, ActualResult.Text);
 
             /*

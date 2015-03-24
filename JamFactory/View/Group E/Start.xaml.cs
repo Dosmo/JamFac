@@ -22,17 +22,10 @@ namespace JamFactory.View.Group_E {
             InitializeComponent();
         }
 
-        private void Activity_Click(object sender, RoutedEventArgs e)
+        private void NewControl_Click(object sender, RoutedEventArgs e)
         {
             AddActivity activity = new AddActivity();
             activity.Show();
-            this.Close();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            AddMeasurement addmesurement = new AddMeasurement();
-            addmesurement.Show();
             this.Close();
         }
 
