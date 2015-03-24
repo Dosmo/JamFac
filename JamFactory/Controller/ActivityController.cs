@@ -19,6 +19,8 @@ namespace JamFactory.Controller
             Database._3DatabaseController.CreateControl(activity);
             Activities.Add(activity);
         }
+
+        /*
         public void AddMeasurement(Model.Control activity)
         {
             foreach (Model.Activity measurement in activity.Measurements)
@@ -26,7 +28,7 @@ namespace JamFactory.Controller
                 Database._3DatabaseController.CreateMeasurement(activity, measurement);
             }
         }
-
+        */
         public void AddActivity(string Title, string Description, string Details, DateTime Time, string ExpectedResult, string ActualResult) {
             Model.Activity activity = new Model.Activity(Title, Description, Details, Time, ExpectedResult, ActualResult);
             ActivityList.Add(activity);
