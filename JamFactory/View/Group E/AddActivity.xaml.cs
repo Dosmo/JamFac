@@ -39,6 +39,7 @@ namespace JamFactory.View.Group_E
         // Move to Acitvitycontroller
         private void AddNewActivity_Click(object sender, RoutedEventArgs e)
         {
+            _activityController = new Controller.ActivityController();
             DateTime Startdate = Convert.ToDateTime(StartDate.SelectedDate);
             ActivityLine.Items.Add(Name.Text + ", " + Description.Text + ", " + Details.Text + ", " + Startdate + ", " + ExpectedResult.Text + ", " + ActualResult.Text);
 
