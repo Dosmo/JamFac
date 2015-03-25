@@ -19,21 +19,22 @@ namespace JamFactory.View.Group_E
     /// </summary>
     public partial class AddMeasurement : Window
     {       
-        Controller.ActivityController _activityController;
-        private string AddName;
-        private string AddDescription;
-        private string AddTimeCheck;
-        private int AddProductID;
-        private int AddEmployeeID;
-        AddActivity addactivity;
+        private Controller.ActivityController _activityController;
+        private AddActivity addactivity;
+
+        private string addName;
+        private string addDescription;
+        private string addTimeCheck;
+        private int addProductID;
+        private int addEmployeeID;
 
         public AddMeasurement(string addname, string adddescription, string addtimecheck, int addproductid, int addemployeeid)
         {
-            AddName = addname;
-            AddDescription = adddescription;
-            AddTimeCheck = addtimecheck;
-            AddProductID = addproductid;
-            AddEmployeeID = addemployeeid;
+            addName = addname;
+            addDescription = adddescription;
+            addTimeCheck = addtimecheck;
+            addProductID = addproductid;
+            addEmployeeID = addemployeeid;
             InitializeComponent();
         }
         /*
@@ -46,9 +47,11 @@ namespace JamFactory.View.Group_E
         
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            _activityController.AddControl2(AddName, AddDescription, AddTimeCheck, AddProductID, AddEmployeeID);
+            _activityController.AddControl2(addName, addDescription, addTimeCheck, addProductID, addEmployeeID);
+            
             addactivity = new AddActivity();
             addactivity.Show();
+
             this.Close();
             //_activityController.AddMeasurement(_activityController.Activities.Last());
         }
@@ -57,11 +60,14 @@ namespace JamFactory.View.Group_E
         private void AddNewActivity_Click(object sender, RoutedEventArgs e)
         {
             _activityController = new Controller.ActivityController();
-            DateTime Startdate = Convert.ToDateTime(StartDate.SelectedDate);
-            TimeSpan staDate = new TimeSpan(Convert.ToInt32(staHours.Text), Convert.ToInt32(staMinuts.Text), 0);
-            Startdate = Startdate + staDate;
-            ActivityLine.Items.Add(Name.Text + ", " + Description.Text + ", " + Details.Text + ", " + Startdate + ", " + ExpectedResult.Text + ", " + ActualResult.Text);
-            _activityController.AddActivity(Name.Text, Description.Text, Details.Text, Startdate, ExpectedResult.Text, ActualResult.Text);
+            
+            DateTime startDate = Convert.ToDateTime(start_DatePicker.SelectedDate);
+            TimeSpan startSpan = new TimeSpan(Convert.ToInt32(staHours.Text), Convert.ToInt32(staMinuts.Text), 0);
+            
+            startDate = startDate + startSpan;
+
+            ActivityLine.Items.Add(name_TextBox.Text + ", " + description_TextBox.Text + ", " + Details.Text + ", " + startDate + ", " + expectedResault_TextBox.Text + ", " + actualResult_TextBox.Text);
+            _activityController.AddActivity(name_TextBox.Text, description_TextBox.Text, Details.Text, startDate, expectedResault_TextBox.Text, actualResult_TextBox.Text);
 
             ClearView();
 
@@ -74,13 +80,13 @@ namespace JamFactory.View.Group_E
 
         private void ClearView()
         {
-            Name.Clear();
-            Description.Clear();
+            name_TextBox.Clear();
+            description_TextBox.Clear();
             Details.Clear();
             staHours.Clear();
             staMinuts.Clear();
-            ExpectedResult.Clear();
-            ActualResult.Clear();
+            expectedResault_TextBox.Clear();
+            actualResult_TextBox.Clear();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e) {
