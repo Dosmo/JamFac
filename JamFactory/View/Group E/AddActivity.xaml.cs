@@ -25,6 +25,7 @@ namespace JamFactory.View.Group_E
         private string AddTimeCheck;
         private int AddProductID;
         private int AddEmployeeID;
+        AddActivity addactivity;
 
         public AddMeasurement(string addname, string adddescription, string addtimecheck, int addproductid, int addemployeeid)
         {
@@ -46,6 +47,9 @@ namespace JamFactory.View.Group_E
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             _activityController.AddControl2(AddName, AddDescription, AddTimeCheck, AddProductID, AddEmployeeID);
+            addactivity = new AddActivity();
+            addactivity.Show();
+            this.Close();
             //_activityController.AddMeasurement(_activityController.Activities.Last());
         }
         // Move to Acitvitycontroller
@@ -58,6 +62,13 @@ namespace JamFactory.View.Group_E
             Startdate = Startdate + staDate;
             ActivityLine.Items.Add(Name.Text + ", " + Description.Text + ", " + Details.Text + ", " + Startdate + ", " + ExpectedResult.Text + ", " + ActualResult.Text);
             _activityController.AddActivity(Name.Text, Description.Text, Details.Text, Startdate, ExpectedResult.Text, ActualResult.Text);
+            Name.Clear();
+            Description.Clear();
+            Details.Clear();
+            staHours.Clear();
+            staMinuts.Clear();
+            ExpectedResult.Clear();
+            ActualResult.Clear();
 
             /*
             _activityController.Activities.Last().Measurements.Add(new Model.Activity(Name.Text, ExpectedResult.Text));

@@ -27,6 +27,7 @@ namespace JamFactory.Controller
             control.Employee = Database._3DatabaseController.GetEmployeeFromPersonID(addemployeeid).FirstOrDefault();
             control.Activitys = ActivityList;
             Database._3DatabaseController.AddControl(control);
+            ActivityList.Clear();
         }
         /*
         public void AddMeasurement(Model.Control activity)
