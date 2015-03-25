@@ -19,7 +19,7 @@ namespace JamFactory.View.Group_E
     /// </summary>
     public partial class AddMeasurement : Window
     {       
-        private Controller.ActivityController _activityController = new Controller.ActivityController();
+        private Controller.ActivityController _activityController;
         private AddActivity addactivity;
 
         private string addName;
@@ -30,6 +30,7 @@ namespace JamFactory.View.Group_E
 
         public AddMeasurement(string addname, string adddescription, string addtimecheck, int addproductid, int addemployeeid)
         {
+            _activityController = new Controller.ActivityController();
             addName = addname;
             addDescription = adddescription;
             addTimeCheck = addtimecheck;
