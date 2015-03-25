@@ -62,6 +62,18 @@ namespace JamFactory.View.Group_E
             Startdate = Startdate + staDate;
             ActivityLine.Items.Add(Name.Text + ", " + Description.Text + ", " + Details.Text + ", " + Startdate + ", " + ExpectedResult.Text + ", " + ActualResult.Text);
             _activityController.AddActivity(Name.Text, Description.Text, Details.Text, Startdate, ExpectedResult.Text, ActualResult.Text);
+
+            ClearView();
+
+            /*
+            _activityController.Activities.Last().Measurements.Add(new Model.Activity(Name.Text, ExpectedResult.Text));
+            Name.Text = "";
+            ExpectedResult.Text = "";
+             */
+        }
+
+        private void ClearView()
+        {
             Name.Clear();
             Description.Clear();
             Details.Clear();
@@ -69,12 +81,6 @@ namespace JamFactory.View.Group_E
             staMinuts.Clear();
             ExpectedResult.Clear();
             ActualResult.Clear();
-
-            /*
-            _activityController.Activities.Last().Measurements.Add(new Model.Activity(Name.Text, ExpectedResult.Text));
-            Name.Text = "";
-            ExpectedResult.Text = "";
-             */
         }
 
         private void Back_Click(object sender, RoutedEventArgs e) {
