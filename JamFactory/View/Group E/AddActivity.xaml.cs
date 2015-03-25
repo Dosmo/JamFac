@@ -19,7 +19,7 @@ namespace JamFactory.View.Group_E
     /// </summary>
     public partial class AddMeasurement : Window
     {       
-        private Controller.ActivityController _activityController;
+        private Controller.ActivityController _activityController = new Controller.ActivityController();
         private AddActivity addactivity;
 
         private string addName;
@@ -59,8 +59,6 @@ namespace JamFactory.View.Group_E
        
         private void AddNewActivity_Click(object sender, RoutedEventArgs e)
         {
-            _activityController = new Controller.ActivityController();
-            
             DateTime startDate = Convert.ToDateTime(start_DatePicker.SelectedDate);
             TimeSpan startSpan = new TimeSpan(Convert.ToInt32(staHours.Text), Convert.ToInt32(staMinuts.Text), 0);
             

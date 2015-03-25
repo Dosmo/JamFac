@@ -66,10 +66,12 @@ namespace JamFactory.Controller.Database
                     command.Parameters.Add(new SqlParameter("@EmployeeID", control.Employee.ID));
                     control.ID = (Int32)command.ExecuteScalar();
 
-                    SqlCommand command2 = new SqlCommand("3_AddActivityLine", connection);
-                    command2.CommandType = CommandType.StoredProcedure;
+                    
 
                     foreach (Model.Activity a in control.Activitys) {
+                        SqlCommand command2 = new SqlCommand("3_AddActivityLine", connection);
+                        command2.CommandType = CommandType.StoredProcedure;
+                        
                         SqlParameter SqlTitle = new SqlParameter("@AL_Title", a.Title);
                         command2.Parameters.Add(SqlTitle);
                         SqlParameter SqlDescription = new SqlParameter("@AL_Description", a.Description);

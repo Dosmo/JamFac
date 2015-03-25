@@ -11,6 +11,7 @@ namespace JamFactory.Controller
     {
         //Model.Activity activity;
         List<Model.Activity> ActivityList = new List<Model.Activity>();
+        Model.Activity activity;
         //public List<Model.Control> Activities = new List<Model.Control>();
         /*
         public void AddControl(Model.Control activity, int personID, int productID)
@@ -27,7 +28,7 @@ namespace JamFactory.Controller
             control.Employee = Database._3DatabaseController.GetEmployeeFromPersonID(addemployeeid).FirstOrDefault();
             control.Activitys = ActivityList;
             Database._3DatabaseController.AddControl(control);
-            ActivityList.Clear();
+            //ActivityList.Clear();
         }
         /*
         public void AddMeasurement(Model.Control activity)
@@ -39,7 +40,7 @@ namespace JamFactory.Controller
         }
         */
         public void AddActivity(string Title, string Description, string Details, DateTime Time, string ExpectedResult, string ActualResult) {
-            Model.Activity activity = new Model.Activity(Title, Description, Details, Time, ExpectedResult, ActualResult);
+            activity = new Model.Activity(Title, Description, Details, Time, ExpectedResult, ActualResult);
             ActivityList.Add(activity);
         }
     }
