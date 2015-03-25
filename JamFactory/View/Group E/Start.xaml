@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Start" Height="300" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Menu HorizontalAlignment="Left" Height="249" Margin="81,10,0,0" VerticalAlignment="Top" Width="119">
+        <Menu HorizontalAlignment="Left" Height="249" Margin="81,10,0,0" VerticalAlignment="Top" Width="119" Background="White">
             <Button x:Name="NewControl" Content="Opret Kontrol" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Click="NewControl_Click"/>
             <Button x:Name="BackToMain" Content="Gå tilbage" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="BackToMain_Click"/>
         </Menu>
