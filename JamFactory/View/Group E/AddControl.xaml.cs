@@ -34,7 +34,7 @@ namespace JamFactory.View.Group_E
             //addMeasurement.SetController(_activityController);
 
             try {
-                addactivity = new AddMeasurement(AddName.Text, AddDescription.Text, AddTimeCheck.Text, int.Parse(AddProductID.Text), int.Parse(AddEmployeeID.Text));
+                addactivity = new AddMeasurement(AddName.Text, AddDescription.Text, AddTimeCheck.Text, int.Parse(/*AddProductID.Text*/""), int.Parse(/*AddEmployeeID.Text*/""));
                 addactivity.Show();
                 this.Close();
             }

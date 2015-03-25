@@ -6,7 +6,7 @@
         <Button Name="Back" Content="Tilbage" HorizontalAlignment="Left" Margin="24,223,0,0" VerticalAlignment="Top" Width="75" Click="Back_Click"/>
 
         <TextBox Name="AddName" HorizontalAlignment="Left" Height="40" Margin="10,51,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock IsHitTestVisible="False" Text="Indtast kontrol navn..." VerticalAlignment="Top" HorizontalAlignment="Left" Margin="13,51,0,0" Foreground="#555" Height="40" Width="120">
+        <TextBlock IsHitTestVisible="False" Text="Indtast kontrol navn..." VerticalAlignment="Top" HorizontalAlignment="Left" Margin="13,51,0,0" Foreground="#555" Height="40" Width="117">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -20,7 +20,7 @@
         </TextBlock>
 
         <TextBox Name="AddDescription" HorizontalAlignment="Left" Height="40" Margin="162,51,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock IsHitTestVisible="False" Text="Beskrivelse af kontrol..." VerticalAlignment="Top" HorizontalAlignment="Left" Margin="166,51,0,0" Foreground="#555" Height="40" Width="120">
+        <TextBlock IsHitTestVisible="False" Text="Beskrivelse af kontrol" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="166,51,0,0" Foreground="#555" Height="40" Width="116">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -34,7 +34,7 @@
         </TextBlock>
         <Button Name="AddNewActivity" Content="Tilføj måling" HorizontalAlignment="Left" Margin="191,223,0,0" VerticalAlignment="Top" Width="75" Click="AddNewActivity_Click"/>
         <TextBox Name="AddTimeCheck" HorizontalAlignment="Left" Height="40" Margin="10,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock IsHitTestVisible="False" Text="Tidsrum for kontrol.." VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15,111,0,0" Foreground="#555" Height="40" Width="120">
+        <TextBlock IsHitTestVisible="False" Text="Tidsrum for kontrol.." VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,111,0,0" Foreground="#555" Height="40" Width="120">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -46,38 +46,10 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-
-        <TextBox Name="AddProductID" HorizontalAlignment="Left" Height="40" Margin="162,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock IsHitTestVisible="False" Text="Indtast produkt ID..." VerticalAlignment="Top" HorizontalAlignment="Left" Margin="164,110,0,0" Foreground="#555" Height="40" Width="120">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=AddProductID}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
-
-        <TextBox Name="AddEmployeeID" HorizontalAlignment="Left" Height="40" Margin="89,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130"/>
-
-        <TextBlock IsHitTestVisible="False" Text="Indtast medarbejder ID..." VerticalAlignment="Top" HorizontalAlignment="Left" Margin="90,167,0,0" Foreground="#555" Height="40" Width="130">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=AddEmployeeID}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
-
-        <Label Content="         	Opret kontrol" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top" Height="29" Width="196" FontSize="15" FontWeight="Bold"/>
-
-        
+        <Label Content="Opret kontrol" HorizontalAlignment="Center" Margin="66,10,114,0" VerticalAlignment="Top" Height="29" Width="112" FontSize="15" FontWeight="Bold"/>
+        <TextBox x:Name="searchproduct_TextBox" HorizontalAlignment="Left" Height="16" Margin="10,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="8"/>
+        <TextBox x:Name="searchperson_TextBox" HorizontalAlignment="Left" Height="16" Margin="162,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="8"/>
+        <ListBox x:Name="search_ListBox" HorizontalAlignment="Left" Height="28" Margin="10,159,0,0" VerticalAlignment="Top" Width="120"/>
+        <ListBox x:Name="person_ListBox" HorizontalAlignment="Left" Height="28" Margin="162,159,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

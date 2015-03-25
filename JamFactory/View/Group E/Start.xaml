@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Start" Height="300" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Name="BackToMain" Content="Gå tilbage" HorizontalAlignment="Left" Margin="104,191,0,0" VerticalAlignment="Top" Width="100" Click="BackToMain_Click"/>
-        <StackPanel HorizontalAlignment="Center" Height="176" Margin="104,10,88,0" VerticalAlignment="Top" Width="100">
+        <Menu HorizontalAlignment="Left" Height="249" Margin="81,10,0,0" VerticalAlignment="Top" Width="119">
             <Button x:Name="NewControl" Content="Opret Kontrol" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Click="NewControl_Click"/>
-        </StackPanel>
+            <Button x:Name="BackToMain" Content="Gå tilbage" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="BackToMain_Click"/>
+        </Menu>
     </Grid>
 </Window>
