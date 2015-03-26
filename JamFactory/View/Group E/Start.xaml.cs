@@ -18,13 +18,14 @@ namespace JamFactory.View.Group_E {
     /// </summary>
     public partial class Start : Window {
         MainWindow main;
+        AddActivity activity;
         public Start() {
             InitializeComponent();
         }
 
         private void NewControl_Click(object sender, RoutedEventArgs e)
         {
-            AddActivity activity = new AddActivity();
+            activity = new AddActivity();
             activity.Show();
             this.Close();
         }

@@ -65,8 +65,8 @@ namespace JamFactory.View.Group_E
             
             startDate = startDate + startSpan;
 
-            ActivityLine.Items.Add(name_TextBox.Text + ", " + description_TextBox.Text + ", " + Details.Text + ", " + startDate + ", " + expectedResault_TextBox.Text + ", " + actualResult_TextBox.Text);
-            _activityController.AddActivity(name_TextBox.Text, description_TextBox.Text, Details.Text, startDate, expectedResault_TextBox.Text, actualResult_TextBox.Text);
+            ActivityLine.Items.Add(name_TextBox.Text + ", " + description_TextBox.Text + ", " + Details.Text + ", " + startDate + ", " + expectedResult_TextBox.Text + ", " + actualResult_TextBox.Text);
+            _activityController.AddActivity(name_TextBox.Text, description_TextBox.Text, Details.Text, startDate, expectedResult_TextBox.Text, actualResult_TextBox.Text);
 
             ClearView();
 
@@ -84,7 +84,7 @@ namespace JamFactory.View.Group_E
             Details.Clear();
             staHours.Clear();
             staMinuts.Clear();
-            expectedResault_TextBox.Clear();
+            expectedResult_TextBox.Clear();
             actualResult_TextBox.Clear();
         }
 
