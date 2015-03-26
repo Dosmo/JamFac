@@ -23,6 +23,8 @@ namespace JamFactory.View.Group_E
         Controller.ActivityController _activityController;
         List<string> PersonSearchList;
         AddMeasurement addactivity;
+        int ProductID;
+        int EmployeeID;
         public AddActivity()
         {
             _activityController = new Controller.ActivityController();
@@ -36,9 +38,15 @@ namespace JamFactory.View.Group_E
             //_activityController.AddControl(new Model.Control(AddName.Text, AddDescription.Text, AddTimeCheck.Text, int.Parse(AddEmployeeID.Text), int.Parse(AddProductID.Text));
             //AddMeasurement addactivity = new AddMeasurement(AddName.Text, AddDescription.Text, AddTimeCheck.Text, int.Parse(AddProductID.Text), int.Parse(AddEmployeeID.Text)); 
             //addMeasurement.SetController(_activityController);
-
+            
+            
             try {
-                addactivity = new AddMeasurement(AddName.Text, AddDescription.Text, AddTimeCheck.Text, int.Parse(/*AddProductID.Text*/""), int.Parse(/*AddEmployeeID.Text*/""));
+                foreach (string s in _activityController.GetAllEmployee(1)) {
+                    if (person_ListBox.SelectedItem == s) {
+                        ProductID = _activityController.GetPersonId(_activityController.GetAllEmployee(1).IndexOf(person_ListBox.SelectedItem.ToString()));
+                    }
+                }
+                addactivity = new AddMeasurement(AddName.Text, AddDescription.Text, AddTimeCheck.Text, /*int.Parse(AddProductID.Text"")*/ProductID, /*int.Parse(AddEmployeeID.Text"")*/EmployeeID);
                 addactivity.Show();
                 this.Close();
             }
@@ -61,17 +69,20 @@ namespace JamFactory.View.Group_E
         }
 
         private void SearchEmployee() {
+            person_ListBox.Items.Clear();
             foreach (string s in PersonSearchList) {
-                search_ListBox.Items.Clear();
-                search_ListBox.Items.Add(s);
+                person_ListBox.Items.Add(s);
             }
         }
         //Gør det sådan at når man søger på navn, så skal det bare hoppe hen til det index hvor navnet står!
         private void searchperson_TextBox_TextChanged(object sender, TextChangedEventArgs e) {
-            foreach (string s in _activityController.GetAllEmployee(2)) {
-                var match = s.IndexOfAny(searchperson_TextBox.Text.ToCharArray()) != -1;
-                PersonSearchList.Add(match.ToString());
+            foreach (string s in _activityController.GetAllEmployee(1)) {
+                if (s.IndexOf(searchperson_TextBox.Text.ToString()) != -1) {
+                    PersonSearchList.Add(s);
+                }
+                SearchEmployee();
             }
+            
         }
     }
 }

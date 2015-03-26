@@ -57,6 +57,11 @@ namespace JamFactory.Controller
             return EmployeeList;
         }
 
+        public int GetPersonId(int index) {
+            int ID = Database._3DatabaseController.GetEmployeeFromPersonID(0)[index].ID;
+            return ID;
+        }
+
         public void AddActivity(string Title, string Description, string Details, DateTime Time, string ExpectedResult, string ActualResult) {
             activity = new Model.Activity(Title, Description, Details, Time, ExpectedResult, ActualResult);
             ActivityList.Add(activity);
