@@ -20,11 +20,15 @@ namespace JamFactory.View.Group_E
     /// yo hoes
     public partial class AddActivity : Window
     {
-        Controller.ActivityController _activityController = new Controller.ActivityController();
+        Controller.ActivityController _activityController;
+        List<string> PersonSearchList;
         AddMeasurement addactivity;
         public AddActivity()
         {
+            _activityController = new Controller.ActivityController();
+            PersonSearchList = new List<string>();
             InitializeComponent();
+            AllEmployee();
         }
         // Move to Acitvitycontroller 
         private void AddNewActivity_Click(object sender, RoutedEventArgs e)
@@ -48,6 +52,26 @@ namespace JamFactory.View.Group_E
             Start start = new Start();
             start.Show();
             this.Close();
+        }
+
+        private void AllEmployee() {
+            foreach (string s in _activityController.GetAllEmployee(1)) {
+                person_ListBox.Items.Add(s);
+            }            
+        }
+
+        private void SearchEmployee() {
+            foreach (string s in PersonSearchList) {
+                search_ListBox.Items.Clear();
+                search_ListBox.Items.Add(s);
+            }
+        }
+        //Gør det sådan at når man søger på navn, så skal det bare hoppe hen til det index hvor navnet står!
+        private void searchperson_TextBox_TextChanged(object sender, TextChangedEventArgs e) {
+            foreach (string s in _activityController.GetAllEmployee(2)) {
+                var match = s.IndexOfAny(searchperson_TextBox.Text.ToCharArray()) != -1;
+                PersonSearchList.Add(match.ToString());
+            }
         }
     }
 }

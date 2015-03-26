@@ -11,6 +11,7 @@ namespace JamFactory.Controller
     {
         //Model.Activity activity;
         List<Model.Activity> ActivityList = new List<Model.Activity>();
+        List<string> EmployeeList = new List<string>();
         Model.Activity activity;
         //public List<Model.Control> Activities = new List<Model.Control>();
         /*
@@ -39,6 +40,23 @@ namespace JamFactory.Controller
             }
         }
         */
+
+        public List<string> GetAllEmployee(int AllorNot) {
+            if (AllorNot == 1) {
+                foreach (Model.Employee employee in Database._3DatabaseController.GetEmployeeFromPersonID(0)) {
+                    EmployeeList.Add(employee.Name + ", ID: " + employee.ID);
+                    //return EmployeeList;
+                }
+            }
+            else if (AllorNot == 2) {
+                foreach (Model.Employee employee in Database._3DatabaseController.GetEmployeeFromPersonID(0)) {
+                    EmployeeList.Add(employee.Name);
+                    //return EmployeeList;
+                }
+            }
+            return EmployeeList;
+        }
+
         public void AddActivity(string Title, string Description, string Details, DateTime Time, string ExpectedResult, string ActualResult) {
             activity = new Model.Activity(Title, Description, Details, Time, ExpectedResult, ActualResult);
             ActivityList.Add(activity);
