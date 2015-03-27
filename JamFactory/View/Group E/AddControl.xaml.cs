@@ -17,7 +17,6 @@ namespace JamFactory.View.Group_E
     /// <summary>
     /// Interaction logic for AddActivity.xaml
     /// </summary>
-    /// yo hoes
     public partial class AddActivity : Window
     {
         Controller.ActivityController _activityController;

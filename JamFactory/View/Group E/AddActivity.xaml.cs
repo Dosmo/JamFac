@@ -28,6 +28,8 @@ namespace JamFactory.View.Group_E
         private int addProductID;
         private int addEmployeeID;
 
+        //Gør det sådan at under activity når man skal lave en activity så skal man vælge hvilken sted i produktionen man kontrollere.
+
         public AddMeasurement(string addname, string adddescription, string addtimecheck, int addproductid, int addemployeeid)
         {
             _activityController = new Controller.ActivityController();
