@@ -4,7 +4,7 @@
         Title="AddMeasurement" Height="457" Width="325" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,1,0,-1">
         <Label Content="  	Tilføj Måling" HorizontalAlignment="Left" Margin="97,11,0,0" VerticalAlignment="Top" Height="36" Width="174" FontSize="15" FontWeight="Bold"/>
-                
+
         <TextBox Name="name_TextBox" HorizontalAlignment="Left" Height="39" Margin="12,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" ToolTip="Test"/>
         <TextBlock IsHitTestVisible="False" HorizontalAlignment="Left" Margin="12,66,0,0" TextWrapping="Wrap" Text="Indtast navn for måling..." VerticalAlignment="Top" Foreground="#555" Width="120" Height="39">
             <TextBlock.Style>
@@ -49,9 +49,9 @@
 
         <DatePicker Name="start_DatePicker" HorizontalAlignment="Left" Margin="168,121,0,0" VerticalAlignment="Top" Width="124" Height="25"/>
 
-        <TextBox Name="staHours" HorizontalAlignment="Left" Height="14" Margin="201,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="14" RenderTransformOrigin="-0.394,-0.014"/>
-        <TextBox Name="staMinuts" HorizontalAlignment="Left" Height="14" Margin="237,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="15"/>
-        <Label Content="t" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,151,0,0"/>
+        <TextBox Name="staHours" HorizontalAlignment="Left" Height="14" Margin="171,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="30" RenderTransformOrigin="-0.394,-0.014"/>
+        <TextBox Name="staMinuts" HorizontalAlignment="Left" Height="14" Margin="223,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="29"/>
+        <Label Content="t" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="204,151,0,0"/>
         <Label Content="m" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,151,0,0"/>
 
         <TextBox Name="expectedResult_TextBox" HorizontalAlignment="Left" Height="40" Margin="12,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"/>
@@ -81,9 +81,9 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        
+
         <Button Name ="AddNewActivity" Content="Tilføj måling" HorizontalAlignment="Left" Margin="80,236,0,0" VerticalAlignment="Top" Width="142" Click="AddNewActivity_Click"/>
-        
+
         <ListBox Name="ActivityLine" HorizontalAlignment="Left" Height="100" Margin="12,267,0,0" VerticalAlignment="Top" Width="282"/>
 
         <Button Name="Save" Content="Gem" HorizontalAlignment="Left" Margin="195,385,0,0" VerticalAlignment="Top" Width="75" Click="Save_Click"/>
