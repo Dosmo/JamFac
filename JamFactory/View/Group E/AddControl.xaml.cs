@@ -23,14 +23,14 @@ namespace JamFactory.View.Group_E
         Controller.ActivityController _activityController;
         List<string> PersonSearchList;
         AddMeasurement addactivity;
-        int ProductID;
-        int EmployeeID;
+        //int ProductID;
+        //int EmployeeID;
         public AddActivity()
         {
             _activityController = new Controller.ActivityController();
             PersonSearchList = new List<string>();
             InitializeComponent();
-            AllEmployee();
+            //AllEmployees();
         }
         // Move to Acitvitycontroller 
         private void AddNewActivity_Click(object sender, RoutedEventArgs e)
@@ -41,12 +41,14 @@ namespace JamFactory.View.Group_E
             
             
             try {
-                foreach (string s in _activityController.GetAllEmployee(1)) {
+                /*
+                foreach (string s in _activityController.GetAllEmployees(1)) {
                     if (person_ListBox.SelectedItem == s) {
-                        ProductID = _activityController.GetPersonId(_activityController.GetAllEmployee(1).IndexOf(person_ListBox.SelectedItem.ToString()));
+                        EmployeeID = _activityController.GetPersonId(_activityController.GetAllEmployees(1).IndexOf(person_ListBox.SelectedItem.ToString()));
                     }
                 }
-                addactivity = new AddMeasurement(AddName.Text, AddDescription.Text, AddTimeCheck.Text, /*int.Parse(AddProductID.Text"")*/ProductID, /*int.Parse(AddEmployeeID.Text"")*/EmployeeID);
+                 */
+                addactivity = new AddMeasurement(AddName.Text, AddDescription.Text, AddTimeCheck.Text, /*int.Parse(AddProductID.Text"")*/_activityController.GetProductId(Product_DropDown.SelectedIndex), /*int.Parse(AddEmployeeID.Text"")EmployeeID*/_activityController.GetPersonId(Employee_DropDown.SelectedIndex));
                 addactivity.Show();
                 this.Close();
             }
@@ -62,9 +64,10 @@ namespace JamFactory.View.Group_E
             this.Close();
         }
 
-        private void AllEmployee() {
-            foreach (string s in _activityController.GetAllEmployee(1)) {
-                person_ListBox.Items.Add(s);
+        private void AllEmployees() {
+            foreach (string s in _activityController.GetAllEmployees(1)) {
+                //person_ListBox.Items.Add(s);
+                Employee_DropDown.Items.Add(s);
             }            
         }
 
@@ -76,13 +79,26 @@ namespace JamFactory.View.Group_E
         }
         //Gør det sådan at når man søger på navn, så skal det bare hoppe hen til det index hvor navnet står!
         private void searchperson_TextBox_TextChanged(object sender, TextChangedEventArgs e) {
-            foreach (string s in _activityController.GetAllEmployee(1)) {
+            foreach (string s in _activityController.GetAllEmployees(1)) {
                 if (s.IndexOf(searchperson_TextBox.Text.ToString()) != -1) {
                     PersonSearchList.Add(s);
                 }
                 SearchEmployee();
             }
-            
+        }
+
+        private void AllProducts() {
+            foreach (string s in _activityController.GetAllProducts()) {
+                Product_DropDown.Items.Add(s);
+            }
+        }
+
+        private void Product_DropDown_DropDownOpened(object sender, EventArgs e) {
+            AllProducts();
+        }
+
+        private void Employee_DropDown_DropDownOpened(object sender, EventArgs e) {
+            AllEmployees();
         }
     }
 }

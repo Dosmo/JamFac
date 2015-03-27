@@ -12,6 +12,7 @@ namespace JamFactory.Controller
         //Model.Activity activity;
         List<Model.Activity> ActivityList = new List<Model.Activity>();
         List<string> EmployeeList = new List<string>();
+        List<string> ProductList = new List<string>();
         Model.Activity activity;
         //public List<Model.Control> Activities = new List<Model.Control>();
         /*
@@ -41,7 +42,7 @@ namespace JamFactory.Controller
         }
         */
 
-        public List<string> GetAllEmployee(int AllorNot) {
+        public List<string> GetAllEmployees(int AllorNot) {
             if (AllorNot == 1) {
                 foreach (Model.Employee employee in Database._3DatabaseController.GetEmployeeFromPersonID(0)) {
                     EmployeeList.Add(employee.Name + ", ID: " + employee.ID);
@@ -59,6 +60,18 @@ namespace JamFactory.Controller
 
         public int GetPersonId(int index) {
             int ID = Database._3DatabaseController.GetEmployeeFromPersonID(0)[index].ID;
+            return ID;
+        }
+
+        public List<string> GetAllProducts() {
+            foreach (Model.Product product in Database._3DatabaseController.GetProductFromID(0)) {
+                ProductList.Add(product.Variant + ", Size: " + product.Size.ToString());
+            }
+            return ProductList;
+        }
+
+        public int GetProductId(int index) {
+            int ID = Database._3DatabaseController.GetProductFromID(0)[index].ID;
             return ID;
         }
 
