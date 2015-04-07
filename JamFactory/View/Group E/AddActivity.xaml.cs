@@ -40,13 +40,6 @@ namespace JamFactory.View.Group_E
             addEmployeeID = addemployeeid;
             InitializeComponent();
         }
-        /*
-        public void SetController(Controller.ActivityController c)
-        {
-            _activityController = c;
-        }
-         */
-        // Move to Acitvitycontroller
         
         private void Save_Click(object sender, RoutedEventArgs e)
         {
@@ -55,10 +48,8 @@ namespace JamFactory.View.Group_E
             addactivity.Show();
             MessageBox.Show("1 Kontrol og " + ActivityLine.Items.Count + " Activiti(s) er blevet tilføjet");
             this.Close();
-            
-            //_activityController.AddMeasurement(_activityController.Activities.Last());
         }
-        // Move to Acitvitycontroller
+        
        
         private void AddNewActivity_Click(object sender, RoutedEventArgs e)
         {
@@ -71,12 +62,6 @@ namespace JamFactory.View.Group_E
             _activityController.AddActivity(name_TextBox.Text, description_TextBox.Text, Details.Text, startDate, expectedResult_TextBox.Text, actualResult_TextBox.Text);
 
             ClearView();
-
-            /*
-            _activityController.Activities.Last().Measurements.Add(new Model.Activity(Name.Text, ExpectedResult.Text));
-            Name.Text = "";
-            ExpectedResult.Text = "";
-             */
         }
 
         private void ClearView()
