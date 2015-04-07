@@ -20,7 +20,7 @@
         </TextBlock>
 
         <TextBox Name="description_TextBox" HorizontalAlignment="Left" Height="39" Margin="168,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"/>
-        <TextBlock IsHitTestVisible="False" HorizontalAlignment="Left" Margin="174,66,0,0" TextWrapping="Wrap" Text="Indtast beskrivelse for måling..." VerticalAlignment="Top" Foreground="#555" Width="120" Height="39">
+        <TextBlock IsHitTestVisible="False" HorizontalAlignment="Left" Margin="171,66,0,0" TextWrapping="Wrap" Text="Indtast beskrivelse for navnet på måling..." VerticalAlignment="Top" Foreground="#555" Width="120" Height="39">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -34,7 +34,7 @@
         </TextBlock>
 
         <TextBox Name="Details" HorizontalAlignment="Left" Height="40" Margin="12,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"/>
-        <TextBlock IsHitTestVisible="False" HorizontalAlignment="Left" Margin="12,121,0,0" TextWrapping="Wrap" Text="Indtast beskrivelse for detaljer ..." VerticalAlignment="Top" Foreground="#555" Width="120" Height="39">
+        <TextBlock IsHitTestVisible="False" HorizontalAlignment="Left" Margin="12,121,0,0" TextWrapping="Wrap" Text="Indtast detaljer for målingerne ..." VerticalAlignment="Top" Foreground="#555" Width="120" Height="39">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
