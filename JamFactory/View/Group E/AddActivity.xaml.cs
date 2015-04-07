@@ -43,7 +43,7 @@ namespace JamFactory.View.Group_E
         
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            _activityController.AddControl2(addName, addDescription, addTimeCheck, addProductID, addEmployeeID);
+            _activityController.AddControl(addName, addDescription, addTimeCheck, addProductID, addEmployeeID);
             addactivity = new AddActivity();
             addactivity.Show();
             MessageBox.Show("1 Kontrol og " + ActivityLine.Items.Count + " Activiti(s) er blevet tilføjet");

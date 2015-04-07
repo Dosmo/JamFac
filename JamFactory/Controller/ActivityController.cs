@@ -14,7 +14,7 @@ namespace JamFactory.Controller
         List<string> ProductList = new List<string>();
         Model.Activity activity;
         
-        public void AddControl2(string addname, string adddescription, string addtimecheck, int addproductid, int addemployeeid) {
+        public void AddControl(string addname, string adddescription, string addtimecheck, int addproductid, int addemployeeid) {
             Model.Control control = new Model.Control(addname, adddescription, addtimecheck);
             control.Product = Database._3DatabaseController.GetProductFromID(addproductid).FirstOrDefault();
             control.Employee = Database._3DatabaseController.GetEmployeeFromPersonID(addemployeeid).FirstOrDefault();
