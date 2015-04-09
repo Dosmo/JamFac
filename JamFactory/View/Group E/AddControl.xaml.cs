@@ -59,7 +59,10 @@ namespace JamFactory.View.Group_E
 
         private void AllProducts() {
             foreach (string s in _activityController.GetAllProducts()) {
-                Product_DropDown.Items.Add(s);
+                if (!Product_DropDown.Items.Contains(s))
+                {
+                    Product_DropDown.Items.Add(s);
+                }
             }
         }
 

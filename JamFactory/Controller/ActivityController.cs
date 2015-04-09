@@ -36,7 +36,7 @@ namespace JamFactory.Controller
 
         public List<string> GetAllProducts() {
             foreach (Model.Product product in Database._3DatabaseController.GetProductFromID(0)) {
-                ProductList.Add(product.Variant + ", Size: " + product.Size.ToString());
+                ProductList.Add(product.ID + ", Size: " + product.Size.ToString());
             }
             return ProductList;
         }
