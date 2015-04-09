@@ -25,28 +25,34 @@ namespace JamFactory.View.Group_E
         private string addName;
         private string addDescription;
         private string addTimeCheck;
+
         private int addProductID;
         private int addEmployeeID;
 
         //Gør det sådan at under activity når man skal lave en activity så skal man vælge hvilken sted i produktionen man kontrollere.
-
+        // Den hedder AddMeasurement men den burde hedde AddActivty
         public AddMeasurement(string addname, string adddescription, string addtimecheck, int addproductid, int addemployeeid)
         {
             _activityController = new Controller.ActivityController();
+
             addName = addname;
             addDescription = adddescription;
             addTimeCheck = addtimecheck;
             addProductID = addproductid;
             addEmployeeID = addemployeeid;
+
             InitializeComponent();
         }
         
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             _activityController.AddControl(addName, addDescription, addTimeCheck, addProductID, addEmployeeID);
+
             addactivity = new AddActivity();
             addactivity.Show();
+
             MessageBox.Show("1 Kontrol og " + ActivityLine.Items.Count + " Activiti(s) er blevet tilføjet");
+
             this.Close();
         }
         

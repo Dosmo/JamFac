@@ -22,8 +22,8 @@ namespace JamFactory.Controller
             Database._3DatabaseController.AddControl(control);
         }
 
-        public List<string> GetAllEmployees() {
-                foreach (Model.Employee employee in Database._3DatabaseController.GetEmployeeFromPersonID(0)) {
+        public List<string> GetAllEmployees() {  
+            foreach (Model.Employee employee in Database._3DatabaseController.GetEmployeeFromPersonID(0)) {
                     EmployeeList.Add(employee.Name + ", ID: " + employee.ID);
                 }
             return EmployeeList;

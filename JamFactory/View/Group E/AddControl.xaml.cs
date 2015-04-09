@@ -50,7 +50,10 @@ namespace JamFactory.View.Group_E
 
         private void AllEmployees() {
             foreach (string s in _activityController.GetAllEmployees()) {
-                Employee_DropDown.Items.Add(s);
+                if (!Employee_DropDown.Items.Contains(s))
+                {
+                    Employee_DropDown.Items.Add(s);
+                }
             }            
         }
 
